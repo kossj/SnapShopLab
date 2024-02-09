@@ -12,7 +12,7 @@ public class SnapShopConfiguration
      * @param theShop A pointer to the application
      */
     public static void configure(SnapShop theShop)
-    {   theShop.setDefaultFilename("C:/Users/jkoss/eclipse-workspace/ImageManipulation/src/monet.jpg");
+    {   theShop.setDefaultFilename("src/monet.jpg");
         theShop.addFilter(new FlipHorizontalFilter(), "Flip Horizontal");
         theShop.addFilter(new FlipVerticalFilter(), "Flip Vertical");
         theShop.addFilter(new LightenBy10Filter(), "Lighten by 10 Image" );

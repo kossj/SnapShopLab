@@ -11,11 +11,15 @@ public class DarkenBy10Filter implements Filter
         for (int row = 0; row < data.length; row++) {
 			for (int col = 0; col < data[0].length; col++) {
 				Pixel old = data[row][col];
-				newData[row][col] = new Pixel(Math.max(0, old.getRed()-10), Math.max(0, old.getGreen()-10), Math.max(255, old.getBlue()-10));
+				newData[row][col] = new Pixel(clamp(old.getRed()-10), clamp(old.getGreen()-10), clamp(old.getBlue()-10));
 			}
 		}
 
 
         pi.setData(newData);
+    }
+
+    private int clamp(int val) {
+        return Math.max(Math.min(255, val), 0);
     }
 }
